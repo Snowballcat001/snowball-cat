@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$SNOW BALL CAT</title>
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Dosis:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Body Style */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('memecoinback.jpg') no-repeat center center/cover;
+            background-size: cover; /* Ensure the image fully covers the page */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.8); /* Increased black shadow border intensity */
+        }
+
+        /* Header Section */
+        .header {
+            position: absolute;
+            top: 30px; /* Moved the text 10px lower */
+            z-index: 2; /* Ensures text is above the background */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* Position "$SNOW BALL CAT" text */
+        .headline-left {
+            font-family: 'Fjalla One', sans-serif; /* Changed to Fjalla One */
+            font-weight: bold;
+            font-size: 2.3rem; /* Increased font size to make letters bigger */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-left: 50px; /* Moved 50px right */
+            margin-top: 50px; /* Moved 50px down */
+            letter-spacing: 2px; /* Increased letter spacing */
+            text-align: left;
+            padding: 10px 20px;
+            border: 4px solid rgba(255, 255, 255, 0.7); /* Semi-transparent border to match background */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        /* Position "$SNOW - The Fluffiest And Coolest Cat" on the right, split into two lines, and smaller */
+        .headline-right {
+            font-family: 'Dosis', sans-serif; /* Changed to Dosis font */
+            font-style: italic;
+            font-size: 1.4rem; /* Made smaller */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            margin-right: 60px; /* Moved 10px more right */
+            letter-spacing: 1px;
+            text-align: right;
+            padding: 10px 20px;
+            border: 4px solid rgba(255, 255, 255, 0.7); /* Semi-transparent border to match background */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: inline-block;
+            line-height: 1.3; /* Split into two lines */
+            max-width: 300px;
+            margin-top: 200px; /* Moved headline 100px down */
+        }
+
+        /* Buy Button Style */
+        .btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background-color: #f39c12;
+            color: #000;
+            font-size: 2rem;
+            font-family: 'MathJax_Math', sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            bottom: 85px; /* Moved the button 30px down (from 55px to 85px) */
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            background-color: #e67e22;
+            transform: translateY(1px);
+        }
+
+        /* Space for Token Address */
+        .token-address {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            color: #f39c12;
+            position: absolute;
+            bottom: 35px; /* Moved token address 5px up (from 40px to 35px) */
+            padding: 10px 20px;
+            border: 4px solid rgba(255, 255, 255, 0.7); /* Semi-transparent border to match background */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        /* Add slight movement on mouseover */
+        .headline-left, .headline-right {
+            transition: transform 0.2s ease-out;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- $SNOW BALL CAT headline on left with transparent border matching the background -->
+        <div class="headline-left" id="headline-left">$SNOW BALL CAT</div>
+        
+        <!-- $SNOW - The Fluffiest and Coolest Cat on the right, split into two lines and smaller -->
+        <div class="headline-right" id="headline-right">$SNOW - The Fluffiest <br>And Coolest Cat In The Crypto Universe!</div>
+    </div>
+
+    <!-- Buy Token Button -->
+    <a href="buy.html" class="btn">Buy Token</a>
+
+    <!-- Space for Token Address -->
+    <div class="token-address">Token Address: <span>[Insert Token Address Here]</span></div>
+
+    <!-- JavaScript for slight mouse movement effect -->
+    <script>
+        const headlineLeft = document.getElementById('headline-left');
+        const headlineRight = document.getElementById('headline-right');
+
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth - 0.5; // Get horizontal position
+            const y = e.clientY / window.innerHeight - 0.5; // Get vertical position
+            
+            // Apply slight movement to both headlines based on mouse position
+            headlineLeft.style.transform = `translate(${x * 20}px, ${y * 10}px)`;
+            headlineRight.style.transform = `translate(${x * 20}px, ${y * 10}px)`;
+        });
+    </script>
+
+</body>
+</html>
